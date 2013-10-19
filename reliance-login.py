@@ -50,7 +50,7 @@ def is_internet_on():
   '''test if the machine is connected to the internet'''
   if debug: print "Testing"
   try:
-    code, headers, html, opener = get_url('http://74.125.113.99', timeout=10)
+    code, headers, html, opener = get_url('http://google.com', timeout=10)
     if debug: print html
     if re.search('google.com', html):
       return True
