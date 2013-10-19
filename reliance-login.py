@@ -17,13 +17,16 @@
 """
  
 import urllib2, urllib, cookielib, time, re, sys
+from pync import Notifier
 
 username = 'username' 
 password = 'password'
 
 '''You don't normally have to edit anything below this line'''
-debug = False
+debug = True
 check_interval = 600
+
+
 
 if ((len(sys.argv) > 2) and (sys.argv[2] == '-d')): debug = True
 
@@ -79,8 +82,11 @@ def internet_keep_alive():
     if not is_internet_on():
       internet_connect()
       if debug: print "Not connected"
+      
+      Notifier.notify('Not Connected',title='Reliance Broadband')
     else:
       if debug: print "Connected"
+      Notifier.notify('Connected',title='Reliance Broadband')
       pass
     time.sleep(check_interval)
 
