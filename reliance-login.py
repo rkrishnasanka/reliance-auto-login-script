@@ -23,7 +23,7 @@ username = 'username'
 password = 'password'
 
 '''You don't normally have to edit anything below this line'''
-debug = True
+debug = False
 check_interval = 600
 
 
